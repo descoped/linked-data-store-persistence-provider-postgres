@@ -1,6 +1,6 @@
-package no.ssb.lds.core.persistence.postgres;
+package io.descoped.lds.core.persistence.postgres;
 
-import no.ssb.lds.core.persistence.test.PersistenceIntegrationTest;
+import io.descoped.lds.core.persistence.test.PersistenceIntegrationTest;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 

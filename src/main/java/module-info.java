@@ -1,8 +1,8 @@
-import no.ssb.lds.api.persistence.PersistenceInitializer;
-import no.ssb.lds.core.persistence.postgres.PostgresDbInitializer;
+import io.descoped.lds.api.persistence.PersistenceInitializer;
+import io.descoped.lds.core.persistence.postgres.PostgresDbInitializer;
 
-module no.ssb.lds.persistence.postgres {
-    requires no.ssb.lds.persistence.api;
+module io.descoped.lds.persistence.postgres {
+    requires io.descoped.lds.persistence.api;
     requires java.sql;
     requires com.zaxxer.hikari;
     requires org.postgresql.jdbc;

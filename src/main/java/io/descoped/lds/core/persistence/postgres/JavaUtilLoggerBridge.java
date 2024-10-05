@@ -1,4 +1,4 @@
-package no.ssb.lds.core.persistence.postgres;
+package io.descoped.lds.core.persistence.postgres;
 
 import org.slf4j.bridge.SLF4JBridgeHandler;
 

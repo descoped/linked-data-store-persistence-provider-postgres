@@ -1,4 +1,4 @@
-package no.ssb.lds.core.persistence.postgres;
+package io.descoped.lds.core.persistence.postgres;
 
 import org.reactivestreams.Publisher;
 import org.reactivestreams.tck.PublisherVerification;

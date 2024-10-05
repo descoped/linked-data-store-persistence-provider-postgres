@@ -1,11 +1,11 @@
-package no.ssb.lds.core.persistence.postgres;
+package io.descoped.lds.core.persistence.postgres;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import no.ssb.lds.api.persistence.PersistenceInitializer;
-import no.ssb.lds.api.persistence.ProviderName;
-import no.ssb.lds.api.persistence.reactivex.RxJsonPersistence;
-import no.ssb.lds.api.persistence.reactivex.RxJsonPersistenceBridge;
+import io.descoped.lds.api.persistence.PersistenceInitializer;
+import io.descoped.lds.api.persistence.ProviderName;
+import io.descoped.lds.api.persistence.reactivex.RxJsonPersistence;
+import io.descoped.lds.api.persistence.reactivex.RxJsonPersistenceBridge;
 
 import java.io.PrintWriter;
 import java.sql.Connection;

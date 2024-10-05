@@ -1,9 +1,9 @@
-package no.ssb.lds.core.persistence.postgres;
+package io.descoped.lds.core.persistence.postgres;
 
 import com.zaxxer.hikari.HikariDataSource;
-import no.ssb.lds.api.persistence.PersistenceException;
-import no.ssb.lds.api.persistence.Transaction;
-import no.ssb.lds.api.persistence.TransactionFactory;
+import io.descoped.lds.api.persistence.PersistenceException;
+import io.descoped.lds.api.persistence.Transaction;
+import io.descoped.lds.api.persistence.TransactionFactory;
 
 import java.sql.Connection;
 import java.sql.SQLException;

@@ -1,17 +1,17 @@
-package no.ssb.lds.core.persistence.postgres;
+package io.descoped.lds.core.persistence.postgres;
 
+import io.descoped.lds.api.persistence.DocumentKey;
+import io.descoped.lds.api.persistence.PersistenceDeletePolicy;
+import io.descoped.lds.api.persistence.PersistenceException;
+import io.descoped.lds.api.persistence.Transaction;
+import io.descoped.lds.api.persistence.TransactionFactory;
+import io.descoped.lds.api.persistence.reactivex.Range;
+import io.descoped.lds.api.persistence.reactivex.RxPersistence;
+import io.descoped.lds.api.persistence.streaming.Fragment;
+import io.descoped.lds.api.persistence.streaming.FragmentType;
 import io.reactivex.Completable;
 import io.reactivex.Flowable;
 import io.reactivex.Single;
-import no.ssb.lds.api.persistence.DocumentKey;
-import no.ssb.lds.api.persistence.PersistenceDeletePolicy;
-import no.ssb.lds.api.persistence.PersistenceException;
-import no.ssb.lds.api.persistence.Transaction;
-import no.ssb.lds.api.persistence.TransactionFactory;
-import no.ssb.lds.api.persistence.reactivex.Range;
-import no.ssb.lds.api.persistence.reactivex.RxPersistence;
-import no.ssb.lds.api.persistence.streaming.Fragment;
-import no.ssb.lds.api.persistence.streaming.FragmentType;
 
 import java.sql.Array;
 import java.sql.PreparedStatement;
@@ -69,8 +69,8 @@ class PostgresPersistence implements RxPersistence {
         final Set<DocumentKey> deletedDocuments = new LinkedHashSet<>();
         final PostgresTransaction tx = (PostgresTransaction) transaction;
         return Single.fromCallable(() -> new CreateSql(
-                tx.connection.prepareStatement("INSERT INTO namespace(entity, id, version, path, indices, type, value) values(?, ?, ?, ?, ?, ?, ?)"),
-                tx.connection.prepareStatement("DELETE FROM namespace WHERE entity = ? AND id = ? AND version = ?")))
+                        tx.connection.prepareStatement("INSERT INTO namespace(entity, id, version, path, indices, type, value) values(?, ?, ?, ?, ?, ?, ?)"),
+                        tx.connection.prepareStatement("DELETE FROM namespace WHERE entity = ? AND id = ? AND version = ?")))
                 .flatMapPublisher(createSql -> fragments.doOnNext(item -> {
                     createSqlRef.set(createSql);
                     PreparedStatement ps = createSql.ps;

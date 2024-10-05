@@ -1,4 +1,4 @@
-package no.ssb.lds.core.persistence.postgres;
+package io.descoped.lds.core.persistence.postgres;
 
 import java.io.InputStream;
 import java.net.URL;
